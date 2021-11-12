@@ -58,16 +58,18 @@ class InnerClassLeakActivity : AppCompatActivity() {
 
     }
 
+    inner class Test {
+        fun test() {
+            textView.text = "Tadaaaa"
+        }
+    }
+
+
     override fun onDestroy() {
 //        downloadTask.destroy()
 //        downloadHandler.removeCallbacksAndMessages(null)
         super.onDestroy()
     }
 
-    inner class Test {
-        fun test() {
-            textView.text = "Tadaaaa"
-        }
-    }
 
 }
