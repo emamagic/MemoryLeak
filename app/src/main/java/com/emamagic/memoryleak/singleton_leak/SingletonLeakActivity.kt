@@ -17,7 +17,8 @@ class SingletonLeakActivity : AppCompatActivity() {
          *
          * Singleton leak
          * we have several way to solve that ->
-         * 1. use application context instead of activity context
+         * 1. use application context instead of activity context because applicationContext is singleton and
+         *     does not any reference to current activity
          * 2. assign null to activity context
          * 3. use weakReferences
          * 4. ...
