@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/testFragment">
+
+
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.emamagic.memoryleak.adapter_leak.TestFragment"
+        android:label="TestFragment" >
+        <action
+            android:id="@+id/action_testFragment_to_test2Fragment"
+            app:destination="@id/test2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/test2Fragment"
+        android:name="com.emamagic.memoryleak.adapter_leak.Test2Fragment"
+        android:label="Test2Fragment" />
+</navigation>

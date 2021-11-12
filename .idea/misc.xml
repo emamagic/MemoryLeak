@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_adapter_leak.xml" value="0.34270833333333334" />
         <entry key="app/src/main/res/layout/activity_ineer_class_leak.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.34270833333333334" />
         <entry key="app/src/main/res/layout/activity_nested_class.xml" value="0.34270833333333334" />
+        <entry key="app/src/main/res/layout/fragment_test.xml" value="0.34270833333333334" />
+        <entry key="app/src/main/res/layout/fragment_test_2.xml" value="0.34270833333333334" />
+        <entry key="app/src/main/res/layout/row_test.xml" value="0.34270833333333334" />
       </map>
     </option>
   </component>
