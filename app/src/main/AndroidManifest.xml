@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MemoryLeak">
         <activity
-            android:name=".IneerClassLeakActivity"
+            android:name=".nested_class_leak.NestedClassActivity"
             android:exported="true" />
         <activity
-            android:name=".SingletonLeakActivity"
+            android:name=".inner_class_leak.InnerClassLeakActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".singleton_leak.SingletonLeakActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>

@@ -1,11 +1,10 @@
-package com.emamagic.memoryleak
+package com.emamagic.memoryleak.singleton_leak
 
 import android.os.Bundle
-import android.os.SystemClock
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.emamagic.memoryleak.R
 
-
+private const val TAG = "SingletonLeakActivity"
 class SingletonLeakActivity : AppCompatActivity() {
 
     lateinit var singletonManager: SingletonManager

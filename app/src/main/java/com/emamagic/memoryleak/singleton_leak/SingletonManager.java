@@ -1,8 +1,6 @@
-package com.emamagic.memoryleak;
+package com.emamagic.memoryleak.singleton_leak;
 
 import android.content.Context;
-
-import java.lang.ref.WeakReference;
 
 public class SingletonManager {
 
