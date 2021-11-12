@@ -28,15 +28,21 @@ class InnerClassLeakActivity : AppCompatActivity() {
          *
          * */
 
-        downloadTask = DownloadTask()
-        downloadTask.start()
+//        downloadTask = DownloadTask()
+//        downloadTask.start()
 
 //        downloadHandler = Handler(Looper.getMainLooper())
 //        downloadHandler.postDelayed(DownloadRunnable(textView), 30000)
 
+        /**
+         * it is not has any memory leak
+         * because scope of that finished before scope of activity finished
+         * */
+        Test().test()
+
     }
 
-    inner class DownloadTask() : Thread() {
+    inner class DownloadTask : Thread() {
         override fun run() {
             Handler(Looper.getMainLooper()).postDelayed({
                 textView.text = "Tadaaaa"
@@ -45,7 +51,7 @@ class InnerClassLeakActivity : AppCompatActivity() {
     }
 
 
-    inner class DownloadRunnable(): Runnable {
+    inner class DownloadRunnable: Runnable {
         override fun run() {
             textView.text = "Tadaaaa"
         }
@@ -56,6 +62,12 @@ class InnerClassLeakActivity : AppCompatActivity() {
 //        downloadTask.destroy()
 //        downloadHandler.removeCallbacksAndMessages(null)
         super.onDestroy()
+    }
+
+    inner class Test {
+        fun test() {
+            textView.text = "Tadaaaa"
+        }
     }
 
 }
