@@ -35,8 +35,10 @@ class InnerClassLeakActivity : AppCompatActivity() {
 //        downloadHandler.postDelayed(DownloadRunnable(textView), 30000)
 
         /**
-         * it is not has any memory leak
-         * because scope of that finished before scope of activity finished
+         *
+         * it is not to lead any memory leak
+         * because inner class instance lives shorter than the container instance is supposed to
+         *
          * */
         Test().test()
 
