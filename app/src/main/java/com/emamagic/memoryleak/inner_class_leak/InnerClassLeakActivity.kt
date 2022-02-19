@@ -40,7 +40,7 @@ class InnerClassLeakActivity : AppCompatActivity() {
          * because inner class instance lives shorter than the container instance is supposed to
          *
          * */
-        Test().test()
+//        Test().test()
 
     }
 
@@ -48,7 +48,7 @@ class InnerClassLeakActivity : AppCompatActivity() {
         override fun run() {
             Handler(Looper.getMainLooper()).postDelayed({
                 textView.text = "Tadaaaa"
-            }, 30000)
+            }, 5000)
         }
     }
 
