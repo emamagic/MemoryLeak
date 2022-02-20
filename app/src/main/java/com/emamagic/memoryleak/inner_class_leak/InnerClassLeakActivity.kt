@@ -31,13 +31,13 @@ class InnerClassLeakActivity : AppCompatActivity() {
 //        downloadTask = DownloadTask()
 //        downloadTask.start()
 
-//        downloadHandler = Handler(Looper.getMainLooper())
-//        downloadHandler.postDelayed(DownloadRunnable(textView), 30000)
+        downloadHandler = Handler(Looper.getMainLooper())
+        downloadHandler.postDelayed(DownloadRunnable(), 30000)
 
         /**
          *
          * it is not to lead any memory leak
-         * because inner class instance lives shorter than the container instance is supposed to
+         * because inner class instance lives shorter than the container instance
          *
          * */
 //        Test().test()
@@ -47,17 +47,18 @@ class InnerClassLeakActivity : AppCompatActivity() {
     inner class DownloadTask : Thread() {
         override fun run() {
             Handler(Looper.getMainLooper()).postDelayed({
-                textView.text = "Tadaaaa"
-            }, 5000)
+                /** if textView be there this Thread lead to memory leak and if textView be comment we have no memory leak */
+//                textView.text = "Tadaaaa"
+            }, 30000)
         }
     }
 
 
     inner class DownloadRunnable: Runnable {
         override fun run() {
-            textView.text = "Tadaaaa"
+            /** if textView be there or not, this Runnable lead to memory leak */
+//            textView.text = "Tadaaaa"
         }
-
     }
 
     inner class Test {
