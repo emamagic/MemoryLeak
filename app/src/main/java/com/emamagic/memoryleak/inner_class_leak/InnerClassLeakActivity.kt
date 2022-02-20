@@ -12,7 +12,7 @@ private const val TAG = "InnerClassLeakActivity"
 class InnerClassLeakActivity : AppCompatActivity() {
 
     private lateinit var textView: TextView
-    private lateinit var downloadTask: Thread
+    private lateinit var downloadTask: DownloadTask
     private lateinit var downloadHandler: Handler
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,11 +28,11 @@ class InnerClassLeakActivity : AppCompatActivity() {
          *
          * */
 
-//        downloadTask = DownloadTask()
-//        downloadTask.start()
+        downloadTask = DownloadTask()
+        downloadTask.start()
 
-        downloadHandler = Handler(Looper.getMainLooper())
-        downloadHandler.postDelayed(DownloadRunnable(), 30000)
+//        downloadHandler = Handler(Looper.getMainLooper())
+//        downloadHandler.postDelayed(DownloadRunnable(), 30000)
 
         /**
          *
@@ -46,6 +46,8 @@ class InnerClassLeakActivity : AppCompatActivity() {
 
     inner class DownloadTask : Thread() {
         override fun run() {
+            /** if textView be there or not, this Runnable lead to memory leak */
+//            sleep(30000)
             Handler(Looper.getMainLooper()).postDelayed({
                 /** if textView be there this Thread lead to memory leak and if textView be comment we have no memory leak */
 //                textView.text = "Tadaaaa"
